@@ -1,80 +1,131 @@
-baseURL = "https://example.com"
-languageCode = "en-us"
-defaultContentLanguage = "en"
-title = "Hugo Hermit"
+baseURL = "http://jojo1735.github.io"
+languageCode = "en"
+defaultContentLanguage = "zh-hans"
+title = "尺走"
 theme = "hermit"
 # enableGitInfo = true
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
 # hasCJKLanguage = true  # If Chinese/Japanese/Korean is your main content language, enable this to make wordCount works right.
 rssLimit = 10  # Maximum number of items in the RSS feed.
-copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
+copyright = "本文采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可，转载请注明 尺走 和出处链接。" # This message is only used by the RSS template.
+summarylength = 180
 enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/functions/emojify/
-# googleAnalytics = "UA-123-45"
+# googleAnalytics = "'UA-18275235-2"
 # disqusShortname = "yourdiscussshortname"
 
 [author]
-  name = "John Doe"
-
-[blackfriday]
-  # hrefTargetBlank = true
-  # noreferrerLinks = true
-  # nofollowLinks = true
+  name = "尺走"
 
 [taxonomies]
   tag = "tags"
-  # Categories are disabled by default.
+  categories = "categories"
 
 [params]
+  since = "2019"
+  toc = true
+
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04 -0700"
 
   # Metadata mostly used in document's head
-  # description = ""
+  description = "尺走，前端，游戏开发，副业"
   # images = [""]
-  themeColor = "#494f5c"
+  themeColor = "#fcfcfc"
+  homeSubtitle = "前端，副业"
 
-  homeSubtitle = "A minimal and fast theme for Hugo."
-  footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
   # bgImg = ""  # Homepage background-image URL
 
   # Prefix of link to the git commit detail page. GitInfo must be enabled.
-  # gitUrl = "https://github.com/username/repository/commit/"
+  gitUrl = "https://github.com/polaris1119/polarisxu/commit/"
 
   # Toggling this option needs to rebuild SCSS, requires Hugo extended version
   justifyContent = false  # Set "text-align: justify" to `.content`.
 
-  relatedPosts = false  # Add a related content section to all single posts page
+  relatedPosts = true  # Add a related content section to all single posts page
 
-  code_copy_button = true # Turn on/off the code-copy-button for code-fields
+  code_copy_button = false # Turn on/off the code-copy-button for code-fields
+
+  mainSections = ["posts"]
   
   # Add custom css
-  # customCSS = ["css/foo.css", "css/bar.css"]
+  customCSS = ["https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css", "css/styles.css"]
 
   # Social Icons
   # Check https://github.com/Track3/hermit#social-icons for more info.
   [[params.social]]
-    name = "twitter"
-    url = "https://twitter.com/"
-
-  [[params.social]]
-    name = "instagram"
-    url = "https://instagram.com/"
-
-  [[params.social]]
     name = "github"
-    url = "https://github.com/"
+    url = "https://github.com/jojo1735"
+  #[[params.social]]
+   # name = "twitter"
+    #url = "https://twitter.com/polaris1119"
+
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = true
+
+  [[related.indices]]
+    name = "keywords"
+    weight = 100
+    includeNewer = true
+    toLower = true
+
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+    includeNewer = true
+    toLower = true
+
+  [[related.indices]]
+    name = "date"
+    weight = 1
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
 
 [menu]
 
   [[menu.main]]
-    name = "Posts"
+    name = "文章"
     url = "posts/"
     weight = 10
 
   [[menu.main]]
-    name = "About"
-    url = "about-hugo/"
+    name = "标签"
+    url = "tags/"
+    weight = 10
+
+  [[menu.main]]
+    name = "关于"
+    url = "about/"
     weight = 20
+
+  [[menu.nav]]
+    name = "首页"
+    url = "/"
+    weight = 8
+
+  [[menu.nav]]
+    name = "Echo系列"
+    url = "categories/echo%E7%B3%BB%E5%88%97/"
+    weight = 10
+
+  [[menu.nav]]
+    name = "开发工具"
+    url = "categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"
+    weight = 12
+
+  [[menu.nav]]
+    name = "归档"
+    url = "/posts/"
+    weight = 14
+
+  [[menu.nav]]
+    name = "关于"
+    url = "about/"
+    weight = 20
+  
